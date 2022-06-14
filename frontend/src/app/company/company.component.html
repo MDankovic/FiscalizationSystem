@@ -1,0 +1,101 @@
+<div>
+  <mat-tab-group>
+    <mat-tab label="Info">
+      <table>
+        <tr>
+          <td>First Name:</td>
+          <td>
+            {{ company.firstName }}
+          </td>
+        </tr>
+        <tr>
+          <td>Last Name:</td>
+          <td>
+            {{ company.lastName }}
+          </td>
+        </tr>
+        <tr>
+          <td>Username:</td>
+          <td>
+            {{ company.username }}
+          </td>
+        </tr>
+        <tr>
+          <td>Phone number:</td>
+          <td>
+            {{ company.phone }}
+          </td>
+        </tr>
+        <tr>
+          <td>Email:</td>
+          <td>
+            {{ company.email }}
+          </td>
+        </tr>
+        <tr>
+          <td>Company name:</td>
+          <td>
+            {{ company.companyName }}
+          </td>
+        </tr>
+        <tr>
+          <td>Country:</td>
+          <td>
+            {{ company.address.country }}
+          </td>
+        </tr>
+        <tr>
+          <td>City:</td>
+          <td>
+            {{ company.address.city }}
+          </td>
+        </tr>
+        <tr>
+          <td>Zip code:</td>
+          <td>
+            {{ company.address.zip }}
+          </td>
+        </tr>
+        <tr>
+          <td>Street:</td>
+          <td>
+            {{ company.address.street }}
+          </td>
+        </tr>
+        <tr>
+          <td>Street number:</td>
+          <td>
+            {{ company.address.streetNumber }}
+          </td>
+        </tr>
+        <tr>
+          <td>PIB:</td>
+          <td>
+            {{ company.pib }}
+          </td>
+        </tr>
+        <tr>
+          <td>ID number:</td>
+          <td>
+            {{ company.idNum }}
+          </td>
+        </tr>
+      </table>
+    </mat-tab>
+    <mat-tab label="Bank Accounts">
+      <tr *ngFor="let acc of company.bankAccounts">
+        <td>{{ acc }}</td>
+      </tr>
+    </mat-tab>
+    <mat-tab label="Storages and Cash Registers">
+      <tr *ngFor="let storage of company.storages">
+        <td>{{ storage['storageId'] }}</td>
+        <td>{{ storage['storageName'] }}</td>
+      </tr>
+      <tr *ngFor="let cashRegister of company.cashRegisters">
+        <td>{{ cashRegister['location'] }}</td>
+        <td>{{ cashRegister['type'] }}</td>
+      </tr>
+    </mat-tab>
+  </mat-tab-group>
+</div>
