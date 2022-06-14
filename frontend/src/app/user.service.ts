@@ -39,6 +39,14 @@ export class UserService {
     return this.http.post(`${this.uri}/users/getByUsername`, data);
   }
 
+  getCompanyByUserame(username: string) {
+    const data={
+      username: username,
+    }
+
+    return this.http.post(`${this.uri}/users/getCompanyByUsername`, data);
+  }
+
   setUser(u: User) {
     this.user = u;
   }

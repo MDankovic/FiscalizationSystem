@@ -14,10 +14,18 @@ export class CompanyComponent implements OnInit {
   constructor(private userService: UserService, private router: Router) { }
 
   ngOnInit(): void {
+    this.user = JSON.parse(localStorage.getItem('user'));
 
+    this.userService.getCompanyByUserame(this.user.username).subscribe((company: Company)=>{
+      if(company){
+        this.company = company;
+      }
+      else this.message = "Bad data";
+    })
   }
 
   company: Company;
+  user: User;
 
   message: string;
 

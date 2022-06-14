@@ -25,6 +25,7 @@ export class LoginComponent implements OnInit {
       if(user){
         localStorage.setItem('user', JSON.stringify(user));
         alert('OK');
+        this.router.navigate(['/company']);
       }
       else this.message = "Bad data";
     })
