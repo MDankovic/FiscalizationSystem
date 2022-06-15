@@ -1,0 +1,49 @@
+
+<button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+  Menu
+  <mat-icon>more_vert</mat-icon>
+</button>
+<mat-menu #menu="matMenu" yPosition="below">
+  <a mat-menu-item routerLink="/company" routerLinkActive="active">
+    <mat-icon>info</mat-icon>
+    <span>Info</span>
+  </a>
+  <a mat-menu-item routerLink="/company-clients" routerLinkActive="active">
+    <mat-icon>groups</mat-icon>
+    <span>Clients</span>
+  </a>
+  <a
+    mat-menu-item
+    routerLink="/company-services"
+    routerLinkActive="active"
+  >
+    <mat-icon>design_services</mat-icon>
+    <span>Services</span>
+  </a>
+  <a
+    mat-menu-item
+    routerLink="/company-items-arrangement"
+    routerLinkActive="active"
+  >
+    <mat-icon>list_alt</mat-icon>
+    <span>Items arrangement</span>
+  </a>
+
+  <a
+    mat-menu-item
+    routerLink="/company-table-arrangement"
+    routerLinkActive="active"
+  >
+    <mat-icon>open_with</mat-icon>
+    <span>Table arrangement</span>
+  </a>
+  <a mat-menu-item routerLink="/company-billing" routerLinkActive="active">
+    <mat-icon>list</mat-icon>
+    <span>Billing</span>
+  </a>
+  <a mat-menu-item routerLink="/company-report-review" routerLinkActive="active">
+    <mat-icon>euro</mat-icon>
+    <span>Report review</span>
+  </a>
+
+</mat-menu>

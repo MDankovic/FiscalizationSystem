@@ -7,21 +7,21 @@ import { UserService } from '../user.service';
 @Component({
   selector: 'app-company',
   templateUrl: './company.component.html',
-  styleUrls: ['./company.component.css']
+  styleUrls: ['./company.component.css'],
 })
 export class CompanyComponent implements OnInit {
-
-  constructor(private userService: UserService, private router: Router) { }
+  constructor(private userService: UserService, private router: Router) {}
 
   ngOnInit(): void {
     this.user = JSON.parse(localStorage.getItem('user'));
 
-    this.userService.getCompanyByUserame(this.user.username).subscribe((company: Company)=>{
-      if(company){
-        this.company = company;
-      }
-      else this.message = "Bad data";
-    })
+    this.userService
+      .getCompanyByUserame(this.user.username)
+      .subscribe((company: Company) => {
+        if (company) {
+          this.company = company;
+        } else this.message = 'Bad data';
+      });
   }
 
   company: Company;
@@ -29,24 +29,21 @@ export class CompanyComponent implements OnInit {
 
   message: string;
 
-  register(){
-    this.userService.register(this.company).subscribe((user: User)=>{
-      if(user){
+  register() {
+    this.userService.register(this.company).subscribe((user: User) => {
+      if (user) {
         localStorage.setItem('user', JSON.stringify(user));
         alert('OK');
-      }
-      else this.message = "Bad data";
-    })
+      } else this.message = 'Bad data';
+    });
   }
 
-  getCompany(){
-    this.userService.register(this.company).subscribe((user: User)=>{
-      if(user){
+  getCompany() {
+    this.userService.register(this.company).subscribe((user: User) => {
+      if (user) {
         localStorage.setItem('user', JSON.stringify(user));
         alert('OK');
-      }
-      else this.message = "Bad data";
-    })
+      } else this.message = 'Bad data';
+    });
   }
-
 }

@@ -1,48 +1,47 @@
 import { Injectable } from '@angular/core';
-import {HttpClient} from '@angular/common/http'
+import { HttpClient } from '@angular/common/http';
 import { User } from './models/user';
 import { Company } from './models/company';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class UserService {
-
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
 
   uri = 'http://localhost:4000';
 
   user: User;
 
-  login(username: string, password: string){
-    const data={
+  login(username: string, password: string) {
+    const data = {
       username: username,
-      password: password
-    }
+      password: password,
+    };
 
     return this.http.post(`${this.uri}/users/login`, data);
   }
 
-  register(company: Company){
-    const data={
-      company: company
-    }
+  register(company: Company) {
+    const data = {
+      company: company,
+    };
 
     return this.http.post(`${this.uri}/users/login`, data);
   }
 
   getByUserame(username: string) {
-    const data={
+    const data = {
       username: username,
-    }
+    };
 
     return this.http.post(`${this.uri}/users/getByUsername`, data);
   }
 
   getCompanyByUserame(username: string) {
-    const data={
+    const data = {
       username: username,
-    }
+    };
 
     return this.http.post(`${this.uri}/users/getCompanyByUsername`, data);
   }

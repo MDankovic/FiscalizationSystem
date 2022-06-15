@@ -1,7 +1,9 @@
-<div>
+<app-company-menu></app-company-menu>
+
+<div style="display: flex; justify-content: center; margin-top: 20px">
   <mat-tab-group>
-    <mat-tab label="Info">
-      <table>
+    <mat-tab label="Basic Info">
+      <table style="width: 100%">
         <tr>
           <td>First Name:</td>
           <td>
@@ -83,19 +85,26 @@
       </table>
     </mat-tab>
     <mat-tab label="Bank Accounts">
-      <tr *ngFor="let acc of company.bankAccounts">
-        <td>{{ acc }}</td>
-      </tr>
+      <table>
+        <tr *ngFor="let acc of company.bankAccounts">
+          <td>{{ acc }}</td>
+        </tr>
+      </table>
     </mat-tab>
     <mat-tab label="Storages and Cash Registers">
-      <tr *ngFor="let storage of company.storages">
-        <td>{{ storage['storageId'] }}</td>
-        <td>{{ storage['storageName'] }}</td>
-      </tr>
-      <tr *ngFor="let cashRegister of company.cashRegisters">
-        <td>{{ cashRegister['location'] }}</td>
-        <td>{{ cashRegister['type'] }}</td>
-      </tr>
+      <table>
+        <tr *ngFor="let storage of company.storages">
+          <td>{{ storage["storageId"] }}</td>
+          <td>{{ storage["storageName"] }}</td>
+        </tr>
+      </table>
+
+      <table>
+        <tr *ngFor="let cashRegister of company.cashRegisters">
+          <td>{{ cashRegister["location"] }}</td>
+          <td>{{ cashRegister["type"] }}</td>
+        </tr>
+      </table>
     </mat-tab>
   </mat-tab-group>
 </div>

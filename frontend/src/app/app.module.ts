@@ -8,15 +8,17 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { CompanyComponent } from './company/company.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatTabsModule } from '@angular/material/tabs';
 import { RegisterComponent } from './register/register.component';
+import { CompanyMenuComponent } from './company-menu/company-menu.component';
+import { MaterialModule } from 'src/material/material.module';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     CompanyComponent,
-    RegisterComponent
+    RegisterComponent,
+    CompanyMenuComponent,
   ],
   imports: [
     BrowserModule,
@@ -24,9 +26,9 @@ import { RegisterComponent } from './register/register.component';
     HttpClientModule,
     FormsModule,
     BrowserAnimationsModule,
-    MatTabsModule
+    MaterialModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

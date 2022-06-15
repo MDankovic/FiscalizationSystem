@@ -1,92 +1,175 @@
-<table>
-  <tr>
-    <td>First Name:</td>
-    <td>
-      <input type="text" name="firstName" [(ngModel)]="company.firstName" />
-    </td>
-  </tr>
-  <tr>
-    <td>Last Name:</td>
-    <td>
-      <input type="text" name="lastName" [(ngModel)]="company.lastName" />
-    </td>
-  </tr>
-  <tr>
-    <td>Username:</td>
-    <td>
-      <input type="text" name="username" [(ngModel)]="company.username" />
-    </td>
-  </tr>
-  <tr>
-    <td>Password:</td>
-    <td>
-      <input type="password" name="username" [(ngModel)]="company.password" />
-    </td>
-  </tr>
-  <tr>
-    <td>Phone number:</td>
-    <td>
-      <input type="text" name="phoneNumber" [(ngModel)]="company.phone" />
-    </td>
-  </tr>
-  <tr>
-    <td>Email:</td>
-    <td>
-      <input type="text" name="email" [(ngModel)]="company.email" />
-    </td>
-  </tr>
-  <tr>
-    <td>Company name:</td>
-    <td>
-      <input type="text" name="companyName" [(ngModel)]="company.companyName" />
-    </td>
-  </tr>
-  <tr>
-    <td>Country:</td>
-    <td>
-      <input type="text" name="country" [(ngModel)]="company.address.country" />
-    </td>
-  </tr>
-  <tr>
-    <td>City:</td>
-    <td>
-      <input type="text" name="city" [(ngModel)]="company.address.city" />
-    </td>
-  </tr>
-  <tr>
-    <td>Zip code:</td>
-    <td>
-      <input type="number" name="zip" [(ngModel)]="company.address.zip" />
-    </td>
-  </tr>
-  <tr>
-    <td>Street:</td>
-    <td>
-      <input type="text" name="street" [(ngModel)]="company.address.street" />
-    </td>
-  </tr>
-  <tr>
-    <td>Street number:</td>
-    <td>
-      <input type="number" name="streetNumber" [(ngModel)]="company.address.streetNumber" />
-    </td>
-  </tr>
-  <tr>
-    <td>PIB:</td>
-    <td>
-      <input type="number" name="pib" [(ngModel)]="company.pib" />
-    </td>
-  </tr>
-  <tr>
-    <td>ID number:</td>
-    <td>
-      <input type="number" name="idNumber" [(ngModel)]="company.idNum" />
-    </td>
-  </tr>
-  <tr>
-    <td colspan="2">
-      <button (click)="register()">Register</button>
-    </td>
-  </tr>
-</table>
-<span class="error">{{ message }}</span>
+<div style="display: flex; justify-content: center; margin-top: 20px">
+  <table>
+    <tr>
+      <td>
+        <h3>Basic info:</h3>
+        <hr />
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <mat-form-field appearance="fill">
+          <mat-label>Company name: </mat-label>
+          <mat-icon matSuffix>account_circle</mat-icon>
+          <input [(ngModel)]="company.companyName" matInput />
+        </mat-form-field>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <mat-form-field appearance="fill">
+          <mat-label>Phone number: </mat-label>
+          <mat-icon matSuffix>phone</mat-icon>
+          <input [(ngModel)]="company.phone" matInput />
+        </mat-form-field>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <mat-form-field appearance="fill">
+          <mat-label>Email: </mat-label>
+          <mat-icon matSuffix>email</mat-icon>
+          <input [(ngModel)]="company.email" matInput type="email" />
+        </mat-form-field>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <mat-form-field appearance="fill">
+          <mat-label>First Name: </mat-label>
+          <mat-icon matSuffix>supervisor_account</mat-icon>
+          <input [(ngModel)]="company.firstName" matInput />
+        </mat-form-field>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <mat-form-field appearance="fill">
+          <mat-label>Last Name: </mat-label>
+          <mat-icon matSuffix>supervisor_account</mat-icon>
+          <input [(ngModel)]="company.lastName" matInput />
+        </mat-form-field>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <mat-form-field appearance="fill">
+          <mat-label>Username: </mat-label>
+          <mat-icon matSuffix>supervisor_account</mat-icon>
+          <input [(ngModel)]="company.username" matInput />
+        </mat-form-field>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <mat-form-field appearance="fill">
+          <mat-label>Password: </mat-label>
+          <mat-icon matSuffix>password</mat-icon>
+          <input [(ngModel)]="company.password" matInput type="password" />
+        </mat-form-field>
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        <h3>Company address:</h3>
+        <hr />
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <mat-form-field appearance="fill">
+          <mat-label>Country: </mat-label>
+          <mat-icon matSuffix>public</mat-icon>
+          <input [(ngModel)]="company.address.country" matInput />
+        </mat-form-field>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <mat-form-field appearance="fill">
+          <mat-label>City: </mat-label>
+          <mat-icon matSuffix>map</mat-icon>
+          <input [(ngModel)]="company.address.city" matInput />
+        </mat-form-field>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <mat-form-field appearance="fill">
+          <mat-label>Zip code: </mat-label>
+          <mat-icon matSuffix>map</mat-icon>
+          <input [(ngModel)]="company.address.zip" matInput type="number" />
+        </mat-form-field>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <mat-form-field appearance="fill">
+          <mat-label>Street: </mat-label>
+          <mat-icon matSuffix>location_on</mat-icon>
+          <input [(ngModel)]="company.address.street" matInput />
+        </mat-form-field>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <mat-form-field appearance="fill">
+          <mat-label>Street number: </mat-label>
+          <mat-icon matSuffix>location_on</mat-icon>
+          <input
+            [(ngModel)]="company.address.streetNumber"
+            matInput
+            type="number"
+          />
+        </mat-form-field>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <h3>Legal details:</h3>
+        <hr />
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <mat-form-field appearance="fill">
+          <mat-label>PIB: </mat-label>
+          <mat-icon matSuffix>perm_identity</mat-icon>
+          <input [(ngModel)]="company.pib" matInput type="number" />
+        </mat-form-field>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <mat-form-field appearance="fill">
+          <mat-label>ID number: </mat-label>
+          <mat-icon matSuffix>perm_identity</mat-icon>
+          <input [(ngModel)]="company.idNum" matInput type="number" />
+        </mat-form-field>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <button
+          mat-stroked-button
+          color="primary"
+          (click)="register()"
+          style="width: 100%"
+        >
+          <mat-icon>app_registration</mat-icon>
+          <span>Register</span>
+        </button>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>
+          Already have an account?
+          <a routerLink="/" routerLinkActive="active">Login</a>
+        </p>
+      </td>
+    </tr>
+  </table>
+  <span class="error">{{ message }}</span>
+</div>

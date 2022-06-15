@@ -1,20 +1,43 @@
-<table>
-  <tr>
-      <td>Username:</td>
+<div style="display: flex; justify-content: center; margin-top: 20px">
+  <table>
+    <tr>
       <td>
-          <input type='text' name='username' [(ngModel)]='username'>
+        <mat-form-field appearance="fill">
+          <mat-label>Username</mat-label>
+          <mat-icon matSuffix>account_box</mat-icon>
+          <input [(ngModel)]="username" matInput />
+        </mat-form-field>
       </td>
-  </tr>
-  <tr>
-      <td>Password:</td>
+    </tr>
+    <tr>
       <td>
-          <input type='password' name='password' [(ngModel)]='password'>
+        <mat-form-field appearance="fill">
+          <mat-label>Password</mat-label>
+          <mat-icon matSuffix>password</mat-icon>
+          <input [(ngModel)]="password" matInput type="password" />
+        </mat-form-field>
       </td>
-  </tr>
-  <tr>
-      <td colspan='2'>
-          <button (click)='login()'>Login</button>
+    </tr>
+    <tr>
+      <td>
+        <mat-error *ngIf="error"> Invalid credentials </mat-error>
       </td>
-  </tr>
-</table>
-<span class='error'>{{message}}</span>
+    </tr>
+    <tr>
+      <td>
+        <button mat-stroked-button color="primary" (click)="login()" style="width: 100%;">
+          <mat-icon>login</mat-icon>
+          <span>Login</span>
+        </button>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>
+          Don't have an account?
+          <a routerLink="/register" routerLinkActive="active">Register</a>
+        </p>
+      </td>
+    </tr>
+  </table>
+</div>
